@@ -4,4 +4,4 @@ This repository contains a couple of learning projects along with a mockup data 
 # Using:  
 - **Python 3.13.2** in a virtual environment
 - **Pandas** for data processing  
-- **VS Code’s Python Interactive Window** for running `.py` files in **Jupyter**  
+- **VS Code’s Python Interactive Window** for running `.py` files using **Jupyter**  
