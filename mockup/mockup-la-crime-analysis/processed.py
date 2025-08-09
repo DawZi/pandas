@@ -32,20 +32,6 @@ num_diff_per = Q4Status_per - Q3Status_per
 time = df_Q4.groupby("TIME OCC")["count"].count().nlargest(5)  # .sum()
 time_perc = round(time / len(df_Q4) * 100, 2).sum()
 
-
-# -------------------------------------------
-# 57 less car thefts compared to last quater (Q3: 262 | Q4: 205)
-# -------------------------------------------
-# Status
-#                     Q4              Q3             DIFF
-# Adult Arrest     1.46% (3)      3.05% (8)      -1.59% (-5)
-# Adult Other      4.88% (10)     5.34% (14)     -0.46% (-4)
-# Caught total     6,34% (13)     8.39% (22)     -2.05% (-9)
-# Invest Cont     93.66% (192)   91.60% (240)    +2.06% (-48 (less in total but more percent wise))
-# -------------------------------------------
-# Most common time period for stealing
-# 17:00 - 22:00   30.23% (62)
-
 status_diff = pd.DataFrame(
     {
         "Q4": Q4Status,
@@ -56,3 +42,4 @@ status_diff = pd.DataFrame(
         "DIFF %": num_diff_per.round(2),
     }
 )
+
