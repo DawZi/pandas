@@ -19,8 +19,9 @@ cols = list(r_vt_df.columns)
 
 r_vt_df = r_vt[["DATE OCC", "Crm Cd Desc", "AREA NAME", "Status Desc", "TIME OCC"]]
 
-r_vt_df["quater"] = pd.to_datetime(r_vt_df["DATE OCC"]).dt.to_period("Q")
+r_vt_df["quarter"] = pd.to_datetime(r_vt_df["DATE OCC"]).dt.to_period("Q")
 
-r_vt_df["quater"].dt.year.unique()
+r_vt_df["quarter"].dt.year.unique()
 
 r_vt_df.to_csv("data/procesed/RampartVehicleThefts.csv", index=False)
+
