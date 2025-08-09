@@ -3,6 +3,6 @@ This repository contains a couple of learning projects along with a mockup data 
 
 # Using:  
 - **VS Code**
-- **Python 3.13.2** in a (`venv`)**  
+- **Python 3.13.2** in a virtual environment
 - **Pandas** for data processing  
 - **VS Code’s Python Interactive Window for running `.py` files in **Jupyter**  
