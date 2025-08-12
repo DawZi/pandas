@@ -24,4 +24,3 @@ r_vt_df["quarter"] = pd.to_datetime(r_vt_df["DATE OCC"]).dt.to_period("Q")
 r_vt_df["quarter"].dt.year.unique()
 
 r_vt_df.to_csv("data/procesed/RampartVehicleThefts.csv", index=False)
-
