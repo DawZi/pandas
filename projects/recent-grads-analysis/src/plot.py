@@ -8,7 +8,7 @@ from matplotlib import style
 
 # Top 10 majors by median salary:
 
-df = pd.read_csv("data/formated/median.csv")
+df = pd.read_csv("../data/formated/median.csv")
 df = df.head(10)
 df.columns
 major = df["Major"]
@@ -35,7 +35,7 @@ for index, value in enumerate(median):
     )
 
 # Top 10 majors with highest unemployment
-df = pd.read_csv("data/formated/unemployment.csv")
+df = pd.read_csv("../data/formated/unemployment.csv")
 df = df.head(10)
 df.columns
 df.dtypes
@@ -62,7 +62,7 @@ for index, value in enumerate(rate):
     )
 
 # Distribution of majors by category.
-df = pd.read_csv("data/formated/major_category.csv")
+df = pd.read_csv("../data/formated/major_category.csv")
 df
 
 other_sum = df.iloc[5:16]["Major"].sum()
