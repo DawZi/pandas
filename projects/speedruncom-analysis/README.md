@@ -1,13 +1,13 @@
 # Recent Grads Analysis
 
 ## Overview
-This project analyzes recent college graduate data to explore salary distributions, unemployment rates, and the distribution of majors by category.  
+This project analyzes data from popular website [Speedrun.com](https://www.speedrun.com).  
 It includes both data processing and visualization scripts.
 
 ## Dataset
-- **Source:** [FiveThirtyEight - College Majors](https://github.com/fivethirtyeight/data/tree/master/college-majors)
+- **Source:** [Kaggle - Speedrun.com Dataset (API v2)](https://www.kaggle.com/datasets/alexmerren1/speedrun-com-data?resource=download)
 - **Location:** `projects/recent-grads-analysis/data/raw/recent-grads.csv`
-- **Size:** 173 rows × 21 columns
+- **Size:** 44,122 rows × 9 columns
 
 ## Processed Data
 - `projects/speedruncom-analysis/data/formated/count_per_year.csv` – Player and run count by year 
