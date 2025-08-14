@@ -1,11 +1,11 @@
 # US Births analysis
 
 ## Overview
-This project analyzes data from [Data](https://github.com/fivethirtyeight/data/tree/4c1ff5e3aef1816ae04af63218015066e186c147) repository.  
+This project analyzes data from [THIS](https://github.com/fivethirtyeight/data/tree/4c1ff5e3aef1816ae04af63218015066e186c147) repository.  
 It includes both data processing and visualization scripts.
 
 ## Dataset
-- **Source:** [FiveThirtyEight data](https://github.com/fivethirtyeight/data/tree/4c1ff5e3aef1816ae04af63218015066e186c147)
+- **Source:** [FiveThirtyEight Repo](https://github.com/fivethirtyeight/data/tree/4c1ff5e3aef1816ae04af63218015066e186c147)
 - **Location:** `projects/us-births-analysis/data/raw/US_births_2000-2014_SSA.csv`
 - **Size:** 5,479 rows × 5 columns
 
