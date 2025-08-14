@@ -19,7 +19,7 @@ BarChart(df, "runsPerPlayer", "gameName", "Runs per player", "", "Games with mos
 # Most popular games
 ##By player count
 df = pd.read_csv("../data/formated/popular_games.csv").head(10)
-BarChart(df, "playerCount", "gameName", "Player count", "", "Gamest with most players")
+BarChart(df, "playerCount", "gameName", "Player count", "", "Games with most players")
 
 ##By run count
 df = df.sort_values("runCount", ascending=False).reset_index(drop=True)
