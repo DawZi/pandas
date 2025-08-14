@@ -14,7 +14,7 @@ It includes both data processing and visualization scripts.
 - `projects/speedruncom-analysis/data/formated/popular_games.csv` – Most popular games by playerCount (Includes runCount for easier calculations)
 - `projects/speedruncom-analysis/data/formated/runs_per_player.csv` –  Games with highest average runs per player
 
-## Visualizations
+## Visualizations 
 - ![Games with most players](plots/most_players.png)
 - ![Games with most submitted runs](plots/most_runs.png)
 - ![Games with most runs per player](plots/most_runs_per_player.png)
