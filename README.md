@@ -1,5 +1,5 @@
 # About
-This repository contains a couple of learning projects abd some of my data science practice work.
+This repository contains a couple of learning projects and some of my data science practice work.
 
 # Using:  
 - **python 3.13.2**
