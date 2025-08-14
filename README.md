@@ -2,6 +2,7 @@
 This repository contains a couple of learning projects abd some of my data science practice work.
 
 # Using:  
-- **Python 3.13.2**
-- **Pandas** for data processing  
+- **python 3.13.2**
+- **pandas** for data processing
+- **matplotlib** and **seaborn** for visualisation
 - **VS Code’s Python Interactive Window** for running `.py` files using **Jupyter**  
