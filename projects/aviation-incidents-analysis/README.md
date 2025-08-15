@@ -22,3 +22,4 @@ It includes data cleaning, processing, and multiple visualizations to highlight 
 - ![Safety improvement leaders](plots/safety_improvement_leaders.png)
 - ![Correlation between incidents and fatalities](plots/incidents_fatalities_correlation.png)
 - ![Relative safety comparison between periods](plots/relative_safety_comparison.png)
+
