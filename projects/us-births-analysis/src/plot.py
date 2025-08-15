@@ -12,7 +12,7 @@ def Load(filename):
 
 
 def FinalizePlot(title, xlabel, ylabel):
-    sns.set_style="darkgrid"
+    sns.set_style(style="darkgrid")
     plt.tight_layout()
     plt.title(f"{title}", fontsize=18)
     plt.xlabel(f"{xlabel}", fontsize=10)
