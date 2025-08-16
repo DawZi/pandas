@@ -55,25 +55,24 @@ data1 = pd.DataFrame(
 data2 = pd.DataFrame(
     {"x": df["incidents_00_14"], "y": df["fatalities_00_14"], "Years": "2000 - 2014"}
 )
-combined_data = pd.concat([data1, data2])
-
+df = pd.concat([data1, data2]).to_csv("../data/formated/correlation.csv")
 
 ##Difference between periods
 df = pd.read_csv("../data/formated/total_safety.csv")
 df = pd.DataFrame(
     {
         "Years": ["1985 - 1999", "2000 - 2014"],
-        "inc": [df.loc[0, "incidents_85_99"], df.loc[0, "incidents_00_14"]],
-        "fat_acc": [
+        "Incidents": [df.loc[0, "incidents_85_99"], df.loc[0, "incidents_00_14"]],
+        "Fatal Accidents": [
             df.loc[0, "fatal_accidents_85_99"],
             df.loc[0, "fatal_accidents_00_14"],
         ],
-        "fat": [df.loc[0, "fatalities_85_99"], df.loc[0, "fatalities_00_14"]],
+        "Fatalities": [df.loc[0, "fatalities_85_99"], df.loc[0, "fatalities_00_14"]],
     }
 )
 df = df.melt(
     id_vars="Years",
-    value_vars=["inc", "fat_acc", "fat"],
+    value_vars=["Incidents", "Fatal Accidents", "Fatalities"],
     var_name="Metric",
     value_name="Count",
 )

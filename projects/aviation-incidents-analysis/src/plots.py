@@ -48,38 +48,24 @@ def BuildSafetyPlots(config_left, config_right):
     ax[1].set_ylabel("")
 
 
-def CombineData(df):
-    data1 = pd.DataFrame({
-    "x": df["incidents_85_99"],
-    "y": df["fatalities_85_99"],
-    'Years': '1985 - 1999'
-    })
-    data2 = pd.DataFrame({
-        "x": df["incidents_00_14"],
-        "y": df["fatalities_00_14"],
-        'Years': '2000 - 2014'
-    })
-    combined_data = pd.concat([data1, data2])
-    return combined_data
-
-
 #Safest airlines
 BuildSafetyPlots(("85_99", "1985-1999", "Safest", "head"),
                  ("00_14", "2000-2014","Safest", "head"))
 
 #Least safe airlines
 BuildSafetyPlots(("85_99", "1985-1999","Least safe", "tail"),
-                ("85_99", "1985-1999","Least safe", "tail"))
+                ("00_14", "2000-2014","Least safe", "tail"))
 
 #Incident vs fatal accident correlation
-df = pd.read_csv("../data/formated/airline_safety.csv")
-combined_data = CombineData(df)
+df = pd.read_csv("../data/formated/correlation.csv")
 
-sns.scatterplot(combined_data, x="x", y="y", hue="Years", palette=[palette[14], palette[2]], style="Years", markers='D', s=25, alpha=0.9)
+sns.scatterplot(df, x="x", y="y", hue="Years", palette=[palette[15], palette[5]], style="Years", markers='D', s=25, alpha=0.9)
 plt.xlabel("Incidents")
 plt.ylabel("Fatalities")
 plt.title("Correlation between incidents and fatalities")
 plt.tight_layout()
+plt.xlim(0, 30) #Filtering one ~70 incident result that compressed whole chart
+
 
 #Improvement leaders
 df = pd.read_csv("../data/formated/airline_safety.csv").sort_values("safety_change", ascending=False).head(10)
@@ -87,9 +73,8 @@ df = pd.read_csv("../data/formated/airline_safety.csv").sort_values("safety_chan
 fig, ax = plt.subplots()
 BarPlot(df, x=df["safety_change"], y=df["airline"] , ax=ax)
 ax.set_title("Safety improvement leaders", fontsize=15)
-ax.set_xlabel("Safety rating change", fontsize=9)
+ax.set_xlabel("Positive safety rating change", fontsize=9)
 ax.set_ylabel("Airline (*regional subsidiaries are included)", fontsize=9)
-ax.xaxis.set_major_formatter(FuncFormatter(lambda x, _: f"+{int(x)}"))
 ax.tick_params(axis="x", labelsize=10)
 ax.tick_params(axis="y", labelsize=10)
 fig.tight_layout()
@@ -97,20 +82,13 @@ fig.tight_layout()
 #Heatmap
 
 # Difference between periods
-df = pd.read_csv("../data/formated/total_safety.csv")
+df = pd.read_csv("../data/formated/diff_between_periods.csv")
 
-df =
-
-
-df = df.melt(id_vars="Years",
-                  value_vars=["inc", "fat_acc", "fat"],
-                  var_name="Metric",
-                  value_name="Count")
-
-df_long["Count_norm"] = df_long.groupby("Metric")["Count"].transform(lambda x: x / x.max())
-
-g = sns.catplot(data=df_long, kind="bar",
-                x="Metric", y="Count_norm", hue="Years"  )
+df["Count_norm"] =df.groupby("Metric")["Count"].transform(lambda x: x / x.max())
+sns.catplot(df, kind="bar",x="Metric", y="Count_norm", hue="Years", palette=[palette[15], palette[5]])
+plt.title("Relative airline safety comparison", fontsize=15)
+plt.xlabel("")
+plt.ylabel("Relative count (normalized)", fontsize=9)
 
 
 
