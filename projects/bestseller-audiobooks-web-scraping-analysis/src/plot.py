@@ -33,7 +33,7 @@ df = pd.read_csv("../data/formated/rating_runtime_correlation.csv")
 
 fig, ax1 = plt.subplots(figsize=(12,6))
 ax2 = ax1.twinx()
-sns.barplot(data=df, x="runtime_bin", y="count", ax=ax1, alpha=0.8, color=palette20[18])
+sns.barplot(data=df, x="runtime_bin", y="count", ax=ax1, color=palette20[18])
 sns.lineplot(data=df, x="runtime_bin", y="rating", marker="o", ax=ax2, color=palette20[0])
 ax1.set_xlabel("Runtime in hours")
 ax2.set_ylabel("Average rating", color=palette20[0], fontsize=9)

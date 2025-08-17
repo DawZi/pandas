@@ -26,7 +26,7 @@ def ParseRuntime(runtime_str):
 
 
 ## Data cleanup "Language: English" -> "English" etc.
-df = pd.read_csv("../data/scraped/bastsellers_scrape.csv")
+df = pd.read_csv("../data/scraped/bestsellers_scrape.csv")
 df.dtypes
 df["rating"] = df["rating"].str.split(" out").str[0]
 df["language"] = df["language"].str.split((" ")).str[1]
