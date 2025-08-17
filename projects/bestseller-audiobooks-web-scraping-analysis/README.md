@@ -1,7 +1,7 @@
 # Bestselling Audiobooks Analysis
 
 ## Overview
-This project analyzes data from the **Top 100 bestselling audiobooks** scraped from [Audible](https://www.audible.com/charts/best).  
+This project analyzes data from the Top 100 bestselling audiobooks scraped from [Audible](https://www.audible.com/charts/best).  
 It includes both data processing and visualization scripts.
 
 ## Dataset
