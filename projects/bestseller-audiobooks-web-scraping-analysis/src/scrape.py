@@ -65,6 +65,6 @@ d = {
 
 df = pd.DataFrame(data=d)
 df
-df.to_csv("../data/scraped/bastsellers_scrape.csv", index=False)
+df.to_csv("../data/scraped/bestsellers_scrape.csv", index=False)
 
 driver.quit()
