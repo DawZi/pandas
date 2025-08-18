@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("../data/formated/pizza_sales.csv")
+df = pd.read_csv("../data/raw/pizza_sales.csv")
 
 
 # Pizza sales by day
