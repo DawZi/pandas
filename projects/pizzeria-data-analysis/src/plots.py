@@ -13,7 +13,7 @@ def BarChart(figsize, df, x, y, palette, bar_width, title, title_x):
     fig, ax = plt.subplots(figsize=(figsize))
     sns.barplot(df, x=x, y=y, palette=palette, width=bar_width, )
     for container in ax.containers:
-        ax.bar_label(container, fontsize=9, fontweight="bold")
+        ax.bar_label(container, fontsize=9, fontweight="bold", padding=5)
     plt.title(title, fontsize=15, color="#EFF6EE", x=title_x, y=1.1, fontweight="bold")
     plt.xlabel("")
     plt.ylabel("")
@@ -74,7 +74,7 @@ sns.set_style(rc={"figure.facecolor": "#2C2C34",
 #Total orders
 #Average number of pizzas per order
 df = pd.read_csv("../data/raw/pizza_sales.csv")
-total_revenue = df["total_price"].sum()
+total_revenue = round(df["total_price"].sum(), 2)
 avg_order_value = df.groupby("order_id")["total_price"].sum().mean()
 total_sold = df["quantity"].sum()
 total_orders = len(df.groupby("order_id"))
