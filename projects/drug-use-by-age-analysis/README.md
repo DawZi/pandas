@@ -18,6 +18,6 @@ It includes both data processing and visualization.
 
 ## Visualizations
 - ![Alcohol usage by age group](plots/alcohol_usage_by_age.png)  
-- ![Marijuana vs Alcohol trends](plots/marijuana_alcohol_trends.png)  
+- ![Marijuana vs Alcohol trend](plots/marijuana_alcohol_trends.png)  
 - ![Most common drugs](plots/most_common_drugs.png)  
 - ![Normalized total usage by age](plots/normalized_total_drug_use.png)  
