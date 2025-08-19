@@ -9,7 +9,7 @@ def BarChart(figsize, df, x, y, palette, bar_width, title, title_x):
     fig, ax = plt.subplots(figsize=(figsize))
     sns.barplot(df, x=x, y=y, palette=palette, width=bar_width, )
     for container in ax.containers:
-        ax.bar_label(container, fontsize=9, fontweight="bold")
+        ax.bar_label(container, fontsize=9, fontweight="bold", padding=5)
     plt.title(title, fontsize=15, color="#EFF6EE", x=title_x, y=1.1, fontweight="bold")
     plt.xlabel("")
     plt.ylabel("")
@@ -80,6 +80,7 @@ BarChart(figsize=(6, 4),
          bar_width=0.8, 
          title="Games with most submitted runs", 
          title_x=-0.06)
+plt.xticks([])
 
 # Player / run count per game release year
 df = pd.read_csv("../data/formated/count_per_year.csv").head(51).rename(columns={"runCount" : "Runs"}) #data from only 50 years of game releases is complete
