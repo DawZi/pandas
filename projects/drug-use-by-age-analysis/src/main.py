@@ -14,8 +14,8 @@ df = (
     .reset_index()
 )
 df.columns = ["drug", "value"]
-df_1 = df.loc[:4].copy()  # Group low usage drugs into single category called other
-df_2 = df.loc[5:].copy()
+df_1 = df.loc[:3].copy()  # Group low usage drugs into single category called other
+df_2 = df.loc[4:].copy()
 other_value = df_2["value"].sum()
 df_other = pd.DataFrame([["Other", other_value]], columns=df.columns)
 df = pd.concat([df_1, df_other], ignore_index=True)

@@ -20,6 +20,6 @@ It includes both data processing and visualization scripts.
 - **Most common major category:** Engineering
 
 ## Visualizations
-- ![Top 10 majors by salary](plots/top_ten_majoors_by_salary.png)  
-- ![Top 10 majors by unemployment](plots/top_ten_majors_by_unemployment.png)  
+- ![Top 10 majors by salary](plots/most_earning_majors.png)  
+- ![Top 10 majors by unemployment](plots/majors_highest_unemployment.png)  
 - ![Majors by category](plots/majors_by_category.png)

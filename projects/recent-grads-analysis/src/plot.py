@@ -2,86 +2,126 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib import style
-
-# Function to add value labels on top of bars
-
-
-# Top 10 majors by median salary:
-
-df = pd.read_csv("../data/formated/median.csv")
-df = df.head(10)
-df.columns
-major = df["Major"]
-median = df["Median"]
-style.use("ggplot")
+import seaborn as sns
 
 
-plt.figure(figsize=(6, 4))
-plt.barh(major, median, height=0.75, color="#7289DA", edgecolor="#23272A")
-plt.gca().invert_yaxis()
-plt.xticks(color="#23272A")
-plt.yticks(color="#23272A")
-plt.title("Top 10 majors by median salary", color="#23272A", ha="right")
-plt.xlabel("Median yearly income in USD", color="#23272A", fontsize=7)
-for index, value in enumerate(median):
-    plt.text(
-        value / 2,
-        index,
-        str(f"${value}"),
-        va="center",
-        ha="center",
-        color="#FFFFFF",
-        fontsize=8,
+def BarChart(figsize, df, x, y, palette, bar_width, title, title_x):
+    fig, ax = plt.subplots(figsize=(figsize))
+    sns.barplot(
+        df,
+        x=x,
+        y=y,
+        palette=palette,
+        width=bar_width,
     )
-
-# Top 10 majors with highest unemployment
-df = pd.read_csv("../data/formated/unemployment.csv")
-df = df.head(10)
-df.columns
-df.dtypes
-major = df["Major"]
-rate = df["Unemployment_rate"].round(2)
+    for container in ax.containers:
+        ax.bar_label(container, fontsize=9, fontweight="bold", padding=5)
+    plt.title(title, fontsize=15, color="#EFF6EE", x=title_x, y=1.1, fontweight="bold")
+    plt.xlabel("")
+    plt.ylabel("")
+    plt.tight_layout()
 
 
-plt.figure(figsize=(6, 4))
-plt.barh(major, rate, height=0.75, color="#7289DA", edgecolor="#23272A")
-plt.gca().invert_yaxis()
-plt.xticks(color="#23272A")
-plt.yticks(color="#23272A")
-plt.title("Top 10 majors with highest unemployment", color="#23272A", ha="right")
-plt.xlabel("Unemployment rate", color="#23272A", fontsize=7)
-for index, value in enumerate(rate):
-    plt.text(
-        value / 2,
-        index,
-        str(value),
-        va="center",
-        ha="center",
-        color="#FFFFFF",
-        fontsize=8,
+def PieChart(figsize, y, donut_ammount, legend, legend_bbox, title, title_x):
+    fig, ax = plt.subplots(figsize=figsize)
+    plt.pie(
+        y,
+        wedgeprops=dict(width=donut_ammount),
+        colors=palette_short,
+        autopct="%.2f%%",
+        pctdistance=1.3,
+        startangle=90,
+        shadow=True,
+        textprops={"weight": "bold", "fontsize": 12},
     )
+    ax.legend(legend, loc="best", bbox_to_anchor=legend_bbox)
+    plt.title(title, fontsize=15, color="#EFF6EE", x=title_x, y=1.1, fontweight="bold")
+    plt.tight_layout()
 
-# Distribution of majors by category.
-df = pd.read_csv("../data/formated/major_category.csv")
-df
 
-other_sum = df.iloc[5:16]["Major"].sum()
-df_filtered = df.iloc[0:5]
-
-df_filtered = pd.concat(
-    [df_filtered, pd.DataFrame({"Major_category": ["Other"], "Major": [other_sum]})],
-    ignore_index=True,
+# Styling and palette
+custom_colors = ["#2C2C34"]
+palette_short = ["#064D26", "#0A7734", "#0F9948", "#12B454", "#4FD07D", "#A5F0C5"]
+palette_long = [
+    "#0F9948",
+    "#10A34D",
+    "#11AD52",
+    "#12B856",
+    "#13C25B",
+    "#14CC60",
+    "#20CF68",
+    "#2CD170",
+    "#37D478",
+    "#43D680",
+]
+sns.set_style(
+    rc={
+        "figure.facecolor": "#2C2C34",
+        "axes.labelcolor": "#14CC60",
+        "xtick.direction": "out",
+        "ytick.direction": "out",
+        "xtick.color": "#EFF6EE",
+        "ytick.color": "#EFF6EE",
+        "axes.axisbelow": True,
+        "grid.linestyle": "-",
+        "text.color": "#EFF6EE",
+        "lines.solid_capstyle": "round",
+        "patch.edgecolor": "w",
+        "patch.force_edgecolor": False,
+        "patch.edgecolor": "#EFF6EE",
+        "axes.grid": False,
+        "axes.facecolor": "#2C2C34",
+        "axes.spines.right": False,
+        "axes.spines.left": False,
+        "axes.spines.top": False,
+        "axes.spines.bottom": False,
+    }
 )
 
-df = df_filtered
-ratio = df["Major"]
-labels = df["Major_category"]
 
-fig, ax = plt.subplots()
-ax.pie(
-    ratio,
-    labels=labels,
-    autopct="%1.1f%%",
-    startangle=90,
-    colors=["#5B6DC8", "#7289DA", "#8A9DE2", "#A3B1EA", "#BCC5F0", "#D5D9F6"],
+# Top majors by median salary:
+median = pd.read_csv("../data/formated/median.csv").head(10)
+
+BarChart(
+    figsize=(8, 4),
+    df=median,
+    x="Median",
+    y="Major",
+    palette=palette_long,
+    bar_width=0.8,
+    title="Most earning majors",
+    title_x=-0.6,
+)
+plt.xticks([])
+
+
+# Top 10 majors with highest unemployment
+highest_unemplotyment = (
+    pd.read_csv("../data/formated/unemployment.csv").head(10).round(2)
+)
+
+BarChart(
+    figsize=(8, 4),
+    df=highest_unemplotyment,
+    x="Unemployment_rate",
+    y="Major",
+    palette=palette_long,
+    bar_width=0.8,
+    title="Majors with highest unemployment rate",
+    title_x=-0.37,
+)
+plt.xticks([])
+
+
+# Distribution of majors by category.
+major_category = pd.read_csv("../data/formated/major_category.csv")
+
+PieChart(
+    figsize=(8, 4),
+    y=major_category["Major"],
+    donut_ammount=0.35,
+    legend=major_category["Major_category"],
+    legend_bbox=(1.2, 0.74),
+    title="Majors distribution by category",
+    title_x=0.57,
 )

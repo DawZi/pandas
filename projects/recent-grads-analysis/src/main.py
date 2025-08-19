@@ -1,7 +1,6 @@
 import pandas as pd
 
 df = pd.read_csv("../data/raw/recent-grads.csv")
-df
 
 df.isnull().sum()
 df = df.fillna(value=0)
@@ -20,10 +19,17 @@ df_unemployment
 df_unemployment.to_csv("../data/formated/unemployment.csv", index=False)
 
 # Distribution of majors by category
-df_category_count = (
+major_category = (
     df.groupby("Major_category")["Major"]
     .count()
     .sort_values(ascending=False)
     .to_frame()
 )
-df_category_count.to_csv("../data/formated/major_category.csv")
+major_category = pd.read_csv("../data/formated/major_category.csv")
+other = major_category.iloc[5:]["Major"].sum()
+filtered = major_category.iloc[:5]
+major_category = pd.concat(
+    [filtered, pd.DataFrame({"Major_category": ["Other"], "Major": [other]})],
+    ignore_index=True,
+)
+major_category.to_csv("../data/formated/major_category.csv")

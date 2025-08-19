@@ -19,6 +19,16 @@ def BarChart(figsize, df, x, y, palette, bar_width, title, title_x):
     plt.ylabel("")
     plt.tight_layout()
 
+def LineChart(data, x, y, title, xtick_rotation, xlabel, ylabel, color=None, palette=None, hue=None):
+    sns.lineplot(data=data, x=x, y=y, color=color, palette=palette, hue=hue)
+    plt.title(title, fontsize=15, color="#EFF6EE", x=0.45, y=1.1, fontweight="bold")
+    plt.grid(True, alpha=0.05)
+    plt.xticks(rotation=xtick_rotation, fontweight="bold")
+    plt.yticks(fontweight="bold")
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+    plt.tight_layout()
+
 def PieChart(figsize, y, donut_ammount, legend, title, title_x):
     fig,ax = plt.subplots(figsize=figsize)
     plt.pie(y,
@@ -97,14 +107,16 @@ plt.xticks(fontweight="bold", rotation=22.5)
 #Hourly trend for total orders
 orders_by_hour = pd.read_csv("../data/formated/orders_by_hour.csv")
 xticks = np.arange(0, 24, 1)
-fig, ax = plt.subplots(figsize=(6,4))
-sns.lineplot(orders_by_hour, x=orders_by_hour["order_time"], y=orders_by_hour["order_id"], color="#12B454")
-ax.set_ylabel("Order count")
-ax.set_xlabel("Order hour")
-ax.set_xticks(xticks)
-plt.xticks(fontweight="bold", rotation=-12.5, fontsize=9)
-plt.yticks(fontweight="bold", fontsize=9)
-ax.set_title("Order count by hour", fontsize=15, color="#EFF6EE", x=0.1, y=1.1, fontweight="bold")
+
+LineChart(data=orders_by_hour,
+          x="order_time",
+          y="order_id",
+          color=palette_short[2],
+          xtick_rotation=45,
+          xlabel="Order hour",
+          ylabel="Order count",
+          title="Order count by hour")
+plt.xticks(xticks)
 
 
 #sales by pizza size
