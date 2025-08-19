@@ -165,7 +165,7 @@ plt.xticks([])
 
 
 #Top 5 worst sellers by total pizzas sold
-worst_sellers = pd.read_csv("../data/formated/sale_numbers.csv").head(5).sort_values(by="quantity")
+worst_sellers = pd.read_csv("../data/formated/sale_numbers.csv").tail(5).sort_values(by="quantity")
 BarChart(figsize=(5, 3),
          df=worst_sellers,
          x="quantity",
@@ -175,7 +175,3 @@ BarChart(figsize=(5, 3),
          title="Worst selling pizza", 
          title_x=-0.45)
 plt.xticks([])
-
-
-
-
