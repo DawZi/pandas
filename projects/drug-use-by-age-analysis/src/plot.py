@@ -87,7 +87,7 @@ LineChart(data=marijuana_vs_alcohol,
           hue="drug",
           palette=[palette_short[2], palette_short[0]],
           title="Marijuana vs alcohol use trends",
-          xtick_rotation=0,
+          xtick_rotation=45,
           xlabel="Age",
           ylabel="Usage in %")
 
