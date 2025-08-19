@@ -43,14 +43,14 @@ sns.set_style(rc={"figure.facecolor": "#2C2C34",
 # Highest runtime
 highest_runtime = pd.read_csv("../data/formated/highest_runtime.csv").head(8)
 
-BarChart(figsize=(6,4),
+BarChart(figsize=(8,4),
          df=highest_runtime,
          x="runtime",
          y="title",
          palette=palette_long,
          bar_width=0.8,
          title="Bestselling audiobooks with the longest runtime",
-         title_x=0.2)
+         title_x=-0.3)
 plt.xlabel("Runtime in hours")
 
 
