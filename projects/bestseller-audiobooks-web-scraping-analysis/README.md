@@ -15,6 +15,10 @@ It includes both data processing and visualization scripts.
 - `projects/bestseller-audiobooks-web-scraping-analysis/data/formated/highest_runtime.csv` – Audiobooks with the highest runtime  
 - `projects/bestseller-audiobooks-web-scraping-analysis/data/formated/rating_runtime_correlation.csv` – Correlation between runtime and ratings  
 
+##Insights
+- Most audiobooks fall in 5 - 20 hour range 
+- Audiobook ratings tend to be slightly lower for very short audiobooks (<10 hours), increase for mid-length audiobooks (15-30 hours), and slightly decline for audiobooks longer than 30 hours.
+
 ## Visualizations 
 - ![Bestselling audiobooks](plots/bestselling_audiobooks.png)  
 - ![Distribution by runtime](plots/distribution_by_runtime.png)  
