@@ -15,9 +15,9 @@ It includes both data processing and visualization scripts.
 - `projects/recent-grads-analysis/data/formated/major_category.csv` – Distribution of majors by category  
 
 ## Analysis Highlights
-- **Highest median salary:** Petroleum Engineering  
-- **Highest unemployment rate:** Nuclear Engineering  
-- **Most common major category:** Engineering
+- Petroleum Engineering is by far the highest-earning major at $110000, well above all others.
+- Despite high salaries, Nuclear Engineering faces the highest unemployment rate.
+- Engineering is the largest distinct major category at 16.76%.
 
 ## Visualizations
 - ![Top 10 majors by salary](plots/most_earning_majors.png)  
