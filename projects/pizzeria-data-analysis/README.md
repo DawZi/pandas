@@ -14,6 +14,12 @@ This project analyzes sales and order data from a pizzeria. It includes data pro
 - `data/formated/sales_by_category.csv` – Sales per pizza category 
 - `data/formated/sales_by_size.csv` – Sales by pizza size
 
+## Insights
+- Sales peak on Fridays (8106) and are lowest on Sundays (5917), showing strong end-of-week demand. 
+- Orders surge at lunch (12h) and dinner (18h), with little demand outside meal times.
+- Sales by pizza size: Large pizzas (38.1%) are the most popular, while XL and larger sizes (1.18%) barely sell
+- Classic pizzas lead sales at nearly 30%, while the other three categories are evenly distributed around 22-24%.
+
 ## Visualizations
 - ![General numbers](plots/general_numbers.png)
 - ![Sales by day](plots/pizza_sales_by_day.png)
