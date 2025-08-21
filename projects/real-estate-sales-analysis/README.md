@@ -14,6 +14,10 @@ It includes both data processing and visualization scripts.
 - `projects/real-estate-sales-analysis/data/formated/sales_per_year.csv` – Sales grouped by year  
 - `projects/real-estate-sales-analysis/data/formated/town_sales.csv` – Sales grouped by town  
 
+## Insights
+- Most properties sell within lower assessed and sale value ranges, showing a positive but uneven correlation between the two.
+- Sales peaked in the mid-2000s, crashed after 2008, partially recovered in the 2010s, and fluctuated around the pandemic period.
+- Urban centers like Bridgeport, Stamford, and Waterbury dominate real estate sales activity compared to smaller towns.
 
 ## Visualizations
 - ![Assessed value vs sale amount](plots/assessed_value_vs_sale_amount_density.png)  
