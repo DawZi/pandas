@@ -86,15 +86,15 @@ sale_vs_assessed = pd.read_csv("../data/formated/sale_vs_assessed.csv")
 
 plt.figure(figsize=(10, 6))
 plt.hexbin(
-    sale_vs_assessed['Assessed Value'] / 10000,
-    sale_vs_assessed['Sale Amount'] / 10000,
+    sale_vs_assessed['Assessed Value'] / 1000000,
+    sale_vs_assessed['Sale Amount'] / 1000000,
     gridsize=50,
     cmap=cmap,
     bins='log'
 )
 plt.colorbar(label='Number of properties')
-plt.xlabel('Assessed value in thousands')
-plt.ylabel('Sale vmount in thousands')
+plt.xlabel('Assessed value in milions ($)')
+plt.ylabel('Sale vmount in milions ($)')
 plt.title('Density of assessed value vs sale amount', fontsize=15, y=1.1, fontweight="bold")
 plt.xticks(fontweight="bold")
 plt.yticks(fontweight="bold")
