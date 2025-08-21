@@ -16,6 +16,12 @@ It includes both data processing and visualization scripts.
 - `projects/us-births-analysis/data/formated/highest_births_by_date.csv` – Dates with the highest recorded birth counts  
 - `projects/us-births-analysis/data/formated/lowest_births_by_date.csv` – Dates with the lowest recorded birth counts  
 
+## Insights
+- July through September are the most common months for births in the US.
+- The US birth rate began a significant decline around the time of the 2008 financial crisis.
+- Significantly fewer births are scheduled on weekends, with Tuesday being the most common day.
+- The vast majority of births (over 80%) occur on weekdays.
+
 ## Visualizations 
 - ![Average births per month](plots/average_per_month.png)  
 - ![Birth counts per year](plots/births_per_year.png)  
