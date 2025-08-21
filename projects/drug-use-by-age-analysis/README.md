@@ -16,6 +16,12 @@ It includes both data processing and visualization.
 - `projects/drug-use-by-age-analysis/data/formated/most_used_drug_overall.csv` – Total usage across all drugs, ranked  
 - `projects/drug-use-by-age-analysis/data/formated/most_using_age_group.csv` – Age groups with highest overall usage  
 
+## Insights
+- Alcohol usage starts very low in early teens (12-14), rises steadily through late teens and early 20s, peaks at ages 21-23 (~83%), then gradually declines in older age groups.
+- Early 20s (21-23), aligning with legal drinking age in the US.
+- Noticeable drop after age 50, with only ~50% usage in 65+.
+- Drug use is highly age-dependent, peaking in early adulthood.
+
 ## Visualizations
 - ![Alcohol usage by age group](plots/alcohol_usage_by_age.png)  
 - ![Marijuana vs Alcohol trend](plots/marijuana_alcohol_trends.png)  
