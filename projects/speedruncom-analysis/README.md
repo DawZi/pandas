@@ -14,6 +14,12 @@ It includes both data processing and visualization scripts.
 - `projects/speedruncom-analysis/data/formated/popular_games.csv` – Most popular games by playerCount (Includes runCount for easier calculations)
 - `projects/speedruncom-analysis/data/formated/runs_per_player.csv` –  Games with highest average runs per player
 
+## Insights
+- Subway Surfers has the largest player base by a huge margin.
+- Classic games inspire the highest volume of run submissions.
+- Smaller games have the most dedicated players.
+- The 2010s are the golden era of speedrunning, dominating all other decades in player activity.
+
 ## Visualizations 
 - ![Games with most players](plots/most_players.png)
 - ![Games with most submitted runs](plots/most_runs.png)
