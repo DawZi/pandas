@@ -1,6 +1,7 @@
 # About
 This repository contains a couple of learning projects and some of my data science practice work.
-(Repo updated everyday)
+
+**Daily updates temporarly stopped since I'm working on a bigger project**
 
 # Using:  
 - **python 3.13.2**
